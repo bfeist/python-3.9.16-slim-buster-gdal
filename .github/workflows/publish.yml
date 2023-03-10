@@ -8,10 +8,10 @@ steps:
 - name: Login to GitHub Container Registry
 uses: docker/login-action@v1
 with:
-registry: ghcr.io
+registry: github.com
 username: ${{ github.actor }}
 password: ${{ secrets.GITHUB_TOKEN }}
-- name: Build the hello-docker Docker image
+- name: Build the python-3.9.16-slim-buster-gdal Docker image
 run: |
        docker build . --tag github.com/bfeist/python-3.9.16-slim-buster-gdal:latest
        docker run github.com/bfeist/python-3.9.16-slim-buster-gdal:latest

@@ -10,3 +10,6 @@ RUN apt-get -y update && \
   pip3 install GDAL==$(gdal-config --version) --global-option=build_ext --global-option="-I/usr/include/gdal" && \
   mkdir /app
 
+COPY . /app
+WORKDIR /app
+CMD python app.py
